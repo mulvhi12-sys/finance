@@ -49,7 +49,7 @@ export default function FinancialAnalyzer() {
           reader.readAsDataURL(file);
         });
 
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        const response = await fetch('/api/analyze', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -209,7 +209,7 @@ If data for previous periods is not available, use null for previous values and 
         metrics: r.keyMetrics,
       }));
 
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('/api/analyze', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
